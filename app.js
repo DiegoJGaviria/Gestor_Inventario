@@ -18,11 +18,11 @@ function mostrarInventario() {
       </p>`;
   });
 }
-
 // Función para agregar un producto desde los inputs de la UI
 function agregarProductoDesdeUI() {
-  const nombreInput = document.getElementById('nombre').value;
-  const cantidadInput = parseInt(document.getElementById('cantidad').value);
+  const nombreInput = document.querySelector('.nombre').value.trim();
+  const cantidadInput = parseInt(document.querySelector('.cantidad').value);
+
 
   // Validar que el usuario haya escrito algo
   if (!nombreInput || isNaN(cantidadInput)) {
@@ -41,8 +41,9 @@ function agregarProductoDesdeUI() {
   inventario.push(nuevo);
 
   // Limpiar inputs
-  document.getElementById('nombre').value = 'ff';
-  document.getElementById('cantidad').value = '1';
+  document.querySelector('.nombre').value = '';
+  document.querySelector('.cantidad').value = '';
+
 
   // Mostrar inventario actualizado
   mostrarInventario();
