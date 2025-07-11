@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Inventario</title>
-  <!-- Enlaza el CSS para estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <h1>Gestor De Inventarios</h1>
 
-  <!-- Div donde aparecera la lista del inventario -->
-  <div id="inventario"></div>
-
-  <!-- Boton para agregar productos -->
   <input class="input nombre" placeholder="Nombre del producto">
   <input class="input cantidad" type="number" placeholder="Cantidad">
-  <button onclick="agregarProductoDesdeUI()">Agregar</button>
+  <input class="input laboratorio" placeholder="Laboratorio">
+  <input class="input lote" placeholder="Lote">
 
-  <!-- Enlaza tu JavaScript -->
+  <button id="btnGuardar" onclick="agregarProductoDesdeUI()">Agregar</button>
+  <input class="filtro" placeholder="Buscar Producto" oninput="filtrarInventario()">
+ 
+
+
+  <table id="tabla-inventario">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre del producto</th>
+        <th>Laboratorio</th>
+        <th>Lote</th>
+        <th>Cantidad</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="inventario"></tbody>
+    </tbody>
+  </table>
+
+
+
   <script src="app.js"></script>
 </body>
+
 </html>
