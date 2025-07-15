@@ -1,8 +1,8 @@
 // Arreglo que guarda los productos del inventario
 let inventario = [
-  { id: 1, nombre: 'ACETAMINOFEN 500MG CJA X 100 TAB', Laboratorio: 'AG', Lote: 'AG001', cantidad: '1500' },
-  { id: 2, nombre: 'AMOXICILINA 500MG CJA X 100 TAB', Laboratorio: 'La Santé', Lote: 'LS001', cantidad: '1200' },
-  { id: 3, nombre: 'IBUPROFENO 400MG CJA X 100 TAB', Laboratorio: 'Genfar', Lote: 'Gf001', cantidad: '800' },
+  { id: 1, nombre: 'ACETAMINOFEN 500MG CJA X 100 TAB', Laboratorio: 'AG', Lote: 'AG001', cantidad: '1500', costo: '5000' },
+  { id: 2, nombre: 'AMOXICILINA 500MG CJA X 100 TAB', Laboratorio: 'La Santé', Lote: 'LS001', cantidad: '1200', costo: '3000' },
+  { id: 3, nombre: 'IBUPROFENO 400MG CJA X 100 TAB', Laboratorio: 'Genfar', Lote: 'Gf001', cantidad: '800', costo: '2000' },
 ];
 let idEditando = null;
 
@@ -15,11 +15,12 @@ function mostrarInventario() {
     const fila = document.createElement('tr');
 
     fila.innerHTML = `
-      <td>${item.id}</td>
+      <td>P${item.id}</td>
       <td>${item.nombre}</td> 
       <td>${item.Laboratorio}</td>
       <td>${item.Lote}</td> 
       <td>${item.cantidad}</td>
+      <td>$ ${item.costo}</td>
       <td>
         <button onclick="editarProducto(${item.id})">
           <i class="fa fa-edit"></i> Editar
@@ -42,8 +43,9 @@ function agregarProductoDesdeUI() {
   const cantidadInput = parseInt(document.querySelector('.cantidad').value);
   const laboratorioInput = document.querySelector('.laboratorio').value.trim();
   const loteInput = document.querySelector('.lote').value.trim();
+  const costoInput = document.querySelector('.costo').value.trim();
 
-  if (!nombreInput || isNaN(cantidadInput) || !laboratorioInput || !loteInput) {
+  if (!nombreInput || isNaN(cantidadInput) || !laboratorioInput || !loteInput || !costoInput) {
     alert('Por favor completa todos los campos.');
     return;
   }
@@ -53,7 +55,8 @@ function agregarProductoDesdeUI() {
     nombre: nombreInput,
     cantidad: cantidadInput,
     Laboratorio: laboratorioInput,
-    Lote: loteInput
+    Lote: loteInput,
+    costo: costoInput
   };
 
   inventario.push(nuevo);
@@ -71,6 +74,7 @@ function editarProducto(id) {
   document.querySelector('.cantidad').value = producto.cantidad;
   document.querySelector('.laboratorio').value = producto.Laboratorio;
   document.querySelector('.lote').value = producto.Lote;
+  document.querySelector('.costo').value = producto.costo;
 
   idEditando = id;
 
@@ -85,8 +89,9 @@ function actualizarProducto() {
   const cantidadInput = parseInt(document.querySelector('.cantidad').value);
   const laboratorioInput = document.querySelector('.laboratorio').value.trim();
   const loteInput = document.querySelector('.lote').value.trim();
+  const costoInput = document.querySelector('.costo').value.trim();
 
-  if (!nombreInput || isNaN(cantidadInput) || !laboratorioInput || !loteInput) {
+  if (!nombreInput || isNaN(cantidadInput) || !laboratorioInput || !loteInput|| !costoInput) {
     alert('Por favor completa todos los campos.');
     return;
   }
@@ -98,6 +103,7 @@ function actualizarProducto() {
   inventario[index].cantidad = cantidadInput;
   inventario[index].Laboratorio = laboratorioInput;
   inventario[index].Lote = loteInput;
+  inventario[index].costo = costoInput;
 
   limpiarInputs();
   mostrarInventario();
@@ -113,7 +119,8 @@ function duplicarProducto(id) {
     nombre: producto.nombre,
     cantidad: producto.cantidad,
     Laboratorio: producto.Laboratorio,
-    Lote: producto.Lote
+    Lote: producto.Lote,
+    costo: producto.costo
   };
 
   inventario.push(nuevoProducto);
@@ -132,6 +139,7 @@ function limpiarInputs() {
   document.querySelector('.cantidad').value = '';
   document.querySelector('.laboratorio').value = '';
   document.querySelector('.lote').value = '';
+  document.querySelector('.costo').value = '';
   idEditando = null;
 
   const btn = document.getElementById('btnGuardar');
@@ -156,6 +164,7 @@ function filtrarInventario() {
         <td>${item.Laboratorio}</td>
         <td>${item.Lote}</td> 
         <td>${item.cantidad}</td>
+        <td>${item.costo}</td>
         <td>
           <button onclick="editarProducto(${item.id})">
             <i class="fa fa-edit"></i> Editar

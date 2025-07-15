@@ -11,12 +11,14 @@
   <h1>Gestor De Inventarios</h1>
 
   <input class="input nombre" placeholder="Nombre del producto">
+  
   <input class="input cantidad" type="number" placeholder="Cantidad">
   <input class="input laboratorio" placeholder="Laboratorio">
   <input class="input lote" placeholder="Lote">
+  <input class="input costo" type="number" placeholder="Costo">
 
   <button id="btnGuardar" onclick="agregarProductoDesdeUI()">Agregar</button>
-  <input class="filtro" placeholder="Buscar Producto" oninput="filtrarInventario()">
+  <input class="ionput filtro" placeholder="Buscar Producto" oninput="filtrarInventario()">
  
 
 
@@ -24,10 +26,11 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>Nombre del producto</th>
+        <th>Nombre Del Producto</th>
         <th>Laboratorio</th>
         <th>Lote</th>
         <th>Cantidad</th>
+        <th>Costo</th>
         <th></th>
       </tr>
     </thead>
