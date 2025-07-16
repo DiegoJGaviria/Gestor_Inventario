@@ -9,16 +9,17 @@
 
 <body>
   <h1>Gestor De Inventarios</h1>
-  <h1><button id="btnAgregar" onclick="irAInicio()"><i class="fa fa-home"></i></button></h1>
+  <h1><button id="btnInicio" onclick="irAInicio()"><i class="fa fa-home"></i></button></h1>
 
   <body>
-    Nombre: <input class="input nombre" placeholder="Nombre del producto">
+    <h4>Nombre: <input class="input nombre">
     Cantidad: <input class="input cantidad" type="number">
     Laboratorio: <input class="input laboratorio">
     Lote: <input class="input lote">
     Costo: <input class="input costo" type="number" placeholder="$"> </body>
 
-  <button id="btnGuardar" onclick="agregarProductoDesdeUI()"><i class="fa fa-plus"></i>Agregar</button>
+  <button id="btnGuardar" onclick="agregarProductoDesdeUI()"><i class="fa fa-plus"></i> Agregar</button>
+  </h4>
   <input class="ionput filtro" placeholder="Buscar Producto" oninput="filtrarInventario()">
 
 

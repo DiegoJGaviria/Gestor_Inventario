@@ -1,195 +1,67 @@
+/* Dashboard y estilos generales */
 body {
-  font-family: Arial, serif;
-  /* Propiedades existentes del body */
+  font-family: Arial, sans-serif;
   background-color: #f4f7f6;
-  flex-direction: column;
+  margin: 10px;
+  padding: 0;
   min-height: 100vh;
-  padding-bottom: 1rem; /* Mantenido de tu CSS */
-  margin: 0; /* Asegura que no haya márgenes por defecto */
-  padding: 0 1rem; /* Añade padding horizontal y mantiene el inferior */
-  box-sizing: border-box; /* Incluye padding en el ancho total */
-  width: 100%; /* Asegura que el body ocupe todo el ancho */
-  align-items: center; /* Centra el contenido horizontalmente (corregido de 'first baseline') */
-  display: flex; /* Permite que flexbox funcione correctamente (corregido de 'display: flexbox') */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   background-color: #2c3e50;
   color: white;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgb(0, 0, 0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  ;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+}
+
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
 }
 
 header h1 {
   margin: 0;
   font-size: 1.8rem;
+  background-color: #000000;
 }
 
-/* Estilos existentes para .input */
-.input {
-  font-size: 18px;
-  margin: auto;
-  padding: 8px 10px;
-  box-sizing: border-box;
-  border: 1.5px solid #bdc3c7;
-  border-radius: 6px;
-}
-
-.ionput {
-  width: 200;
-  font-size: 15px;
-  margin: 0;
-  padding: 8px 10px;
-  box-sizing: border-box;
-  border: 1.5px solid #bdc3c7;
-  border-radius: 6px;
-}
-
-/* Estilos existentes para .filtro */
-.filtro {
-  width: 350px;
-  padding: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5rem; /* Mantenido de tu CSS */
-  margin-bottom: 1.5rem; /* Mantenido de tu CSS */
-  max-width: 400px;
-}
-
-/* Estilos existentes para .nombre */
-.nombre {
-  width: 500px;
-  margin: 5px 5px;
-  padding: 5px;
-  font-size: 20px;
-}
-
-/* Estilos existentes para .cantidad */
-.cantidad {
-  width: 80px;
-  margin: 5px 5px;
-  padding: 5px;
-  font-size: 20px;
-}
-
-/* Estilos existentes para .laboratorio */
-.laboratorio {
-  width: 200px;
-  margin: 5px 10px;
-  padding: 5px;
-  font-size: 20px;
-}
-
-/* Estilos existentes para .lote */
-.lote {
-  width: 200px;
-  margin: 5px 10px;
-  padding: 5px;
-  font-size: 20px;
-}
-
-.costo {
-  width: 200px;
-  margin: 5px 10px;
-  padding: 5px;
-  font-size: 20px;
-}
-
-/* Estilos existentes para button */
-button {
-  padding: 7px 10px;
-  margin: auto;
-  font-size: auto; /* Tu regla existente (inválida, pero mantenida) */
-  font-size: 1rem; /* Nueva regla para corregir y dar un tamaño base */
-  cursor: pointer;
-  background-color: #2980b9;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-}
-
-/* Estilos existentes para table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 5px;
-  font-size: 20px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgb(63, 63, 63);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Estilos existentes para th,td */
-td {
-  text-align: left; /* Corregido de 'auto' */
-  margin: 55px 15px; /* Mantenido de tu CSS (inusual para td) */
-  border-bottom: 2px solid #cacaca; /* Mantenido de tu CSS */
-  padding: 1rem; /* Ajuste de padding para mayor espacio (unificado) */
-  border-bottom: 2px solid #e7e7e7; /* Borde más suave (unificado) */
-  font-size: 0.9rem; /* Tamaño de fuente */
-}
-
-/* Estilos existentes para th */
-th {
-  background-color: #34495e; /* Color de fondo más oscuro (unificado) */
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1rem; /* Tamaño de fuente más pequeño para encabezados (unificado) */
-  text-align: left; /* Mantenido de tu CSS */
-  border-bottom: 2px solid #cacaca; /* Mantenido de tu CSS */
-  padding: 1rem; /* Ajuste de padding para mayor espacio (unificado) */
-  border-bottom: 1px solid #ecf0f1; /* Borde más suave (unificado) */
-}
-
-/* Estilos existentes para tr:nth-child(even) */
-tr:nth-child(even) {
-  background-color: #f9f9f9; /* Color más claro (unificado) */
-}
-
-/* Estilos existentes para .btn-accion */
-.btn-accion {
-  background-color: #6d6d6d;
-  color: white;
-  border: none;
-  margin: 0 2px;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 0.5rem 0.8rem; /* Nuevos estilos para .btn-accion (unificado) */
-  font-size: 0.85rem;
-}
-
-/* Estilos existentes para .btn-accion:hover */
-.btn-accion:hover {
-  background-color: #797979;
-}
-
-/* Estilos existentes para .btn-accion i */
-.btn-accion i {
-  margin-right: 3px;
-}
-
-/* --- Estilos del Dashboard (movidos de inventario.html) --- */
 .container {
   display: flex;
   flex: 1;
   width: 100%;
+  max-width: 100%;
+  margin: 2rem 0;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   padding: 2rem;
-  margin-top: 2rem;
-  max-width: 900px;
   box-sizing: border-box;
-  flex-direction: column;
-  }
+}
+
+/* Agrega esto a tu style.css */
+.header-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 0 1rem;
+
+}
+
+.header-link:hover {
+  color: #2980b9;
+}
 
 aside {
   width: 250px;
@@ -206,10 +78,14 @@ aside nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
 }
 
 aside nav ul li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
 }
 
 aside nav ul li a {
@@ -219,6 +95,7 @@ aside nav ul li a {
   display: block;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  font-size: 0.9rem;
 }
 
 aside nav ul li a:hover,
@@ -230,6 +107,14 @@ main {
   flex: 1;
   padding: 2rem;
   background-color: #ecf0f1;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #bdc3c7;
+  padding-bottom: 0.5rem;
 }
 
 .card-grid {
@@ -264,60 +149,109 @@ main {
   font-size: 1.8rem;
 }
 
-.section-title {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid #bdc3c7;
-  padding-bottom: 0.5rem;
+/* Formularios e inputs */
+.input,
+.ionput {
+  width: 100px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  border: 1.5px solid #bdc3c7;
+  border-radius: 6px;
 }
 
-/* Estilos para la sección del formulario (inputs y botón agregar) */
-.form-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-  align-items: end;
+.nombre {
+  width: 650px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
 }
 
-/* Estilos para el estado de foco de los inputs */
+.cantidad {
+  width: 100px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+}
+
+.laboratorio {
+  width: 200px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+}
+
+.lote {
+  width: 150px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+}
+
+.costo {
+  width: 120px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+}
+
 .input:focus {
   outline: none;
   border-color: #2980b9;
   box-shadow: 0 0 0 2px rgba(41, 128, 185, 0.2);
 }
 
-/* Estilos específicos para el botón de inicio */
-#btnAgregar {
-  width: 50px;
-  padding: 10px 0px;
-  font-size: 25px;
-  background-color: #2c3e50;
-  grid-column: 1 / -1;
-  margin-bottom: 0;
+.filtro {
+  width: 350px;
+  padding: 5px 0px;
+  display: flex;
+  margin: 5px 5px;
+  max-width: 400px;
+  border-radius: 6px;
+  border: 2px solid #bdc3c7;
 }
 
-#btnAgregar:hover {
-  background-color: #34495e;
+/* Botones */
+button,
+.btn-accion {
+  padding: 7px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
-/* Estilos específicos para el botón de guardar/agregar producto */
-#btnGuardar {
-  grid-column: span 2;
+.btn-accion {
+  background-color: #6d6d6d;
+  margin: 0 2px;
+  border-radius: 4px;
+  font-size: 0.85rem;
 }
 
-/* Estilos para las filas de la tabla al pasar el ratón */
-tr:hover {
-  background-color: #eef4f7;
+.btn-accion:hover {
+  background-color: #797979;
 }
 
-/* Centrar los botones de acción en la última columna de la tabla */
-td:last-child {
-  text-align: center;
-}
-
-/* Estilos específicos para botones de acción de editar */
 .btn-accion.edit {
   background-color: #f39c12;
 }
@@ -326,7 +260,6 @@ td:last-child {
   background-color: #e67e22;
 }
 
-/* Estilos específicos para botones de acción de eliminar */
 .btn-accion.delete {
   background-color: #e74c3c;
 }
@@ -335,35 +268,134 @@ td:last-child {
   background-color: #c0392b;
 }
 
-/* --- Media Queries para Responsividad --- */
+.btn-accion i {
+  margin-right: 3px;
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  font-size: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgb(63, 63, 63);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: #34495e;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid #e7e7e7;
+  font-size: 0.9rem;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #eef4f7;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+/* Formulario grid */
+.form-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: end;
+}
+
+/* Botón específico */
+#btnAgregar {
+  width: 10px;
+  padding: 10px 0px;
+  font-size: 25px;
+  background-color: #2c3e50;
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+#btnInicio {
+  width: 50px;
+  padding: 10px 0px;
+  font-size: 25px;
+  background-color: #2c3e50;
+  grid-column: 1 / -1;
+  margin-bottom: 0.2rem;
+
+}
+
+
+.btnAgregar:hover {
+  background-color: #34495e;
+}
+
+#btnGuardar {
+  grid-column: span 2;
+  width: 100px;
+  padding: 10px 10px;
+  margin: 15px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  header {
+  .container {
     flex-direction: column;
-    gap: 0.5rem;
     padding: 1rem;
+    margin-top: 1rem;
+    max-width: 100%;
+    flex: 1
   }
-   
+
   aside {
     width: 100%;
     padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Corregido de rgba(255,0,0,0.1) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
+
   aside nav ul {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
   }
+
   aside nav ul li {
     margin-bottom: 0;
   }
+
   aside nav ul li a {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
   }
+
   main {
-    padding: 1.5rem;
+    padding: 1rem;
   }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   table,
   thead,
   tbody,
@@ -372,17 +404,20 @@ td:last-child {
   tr {
     display: block;
   }
+
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
+
   tr {
     border: 1px solid #ccc;
     margin-bottom: 1rem;
     border-radius: 8px;
     overflow: hidden;
   }
+
   td {
     border: none;
     border-bottom: 1px solid #eee;
@@ -390,6 +425,7 @@ td:last-child {
     padding-left: 50%;
     text-align: right;
   }
+
   td:before {
     position: absolute;
     top: 0;
@@ -401,29 +437,11 @@ td:last-child {
     font-weight: bold;
     color: #34495e;
   }
-  td:nth-of-type(1):before {
-    content: "ID";
-  }
-  td:nth-of-type(2):before {
-    content: "Nombre";
-  }
-  td:nth-of-type(3):before {
-    content: "Laboratorio";
-  }
-  td:nth-of-type(4):before {
-    content: "Lote";
-  }
-  td:nth-of-type(5):before {
-    content: "Cantidad";
-  }
-  td:nth-of-type(6):before {
-    content: "Costo";
-  }
-  td:nth-of-type(7):before {
-    content: "Acciones";
-  }
+
   td:last-child {
     border-bottom: none;
     text-align: right;
   }
 }
+
+/* Puedes agregar más media queries si lo necesitas */
