@@ -1,20 +1,16 @@
 body {
   font-family: Arial, serif;
+  /* Propiedades existentes del body */
   background-color: #f4f7f6;
   flex-direction: column;
-  align-items: center;
-  /* Centra el contenido horizontalmente */
   min-height: 100vh;
-  padding: 0 1rem 1rem;
-  /* Añade padding horizontal y mantiene el inferior */
-  margin: 0;
-  /* Asegura que no haya márgenes por defecto */
-  display: block;
-  /* Permite que flexbox funcione correctamente */
-  box-sizing: border-box;
-  /* Incluye padding en forma horizontal */
-  width: 100%;
-  /* Asegura que el body ocupe todo el ancho */
+  padding-bottom: 1rem; /* Mantenido de tu CSS */
+  margin: 0; /* Asegura que no haya márgenes por defecto */
+  padding: 0 1rem; /* Añade padding horizontal y mantiene el inferior */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+  width: 100%; /* Asegura que el body ocupe todo el ancho */
+  align-items: center; /* Centra el contenido horizontalmente (corregido de 'first baseline') */
+  display: flex; /* Permite que flexbox funcione correctamente (corregido de 'display: flexbox') */
 }
 
 header {
@@ -41,6 +37,7 @@ header h1 {
   border: 1.5px solid #bdc3c7;
   border-radius: 6px;
 }
+
 .ionput {
   width: 200;
   font-size: 15px;
@@ -58,8 +55,8 @@ header h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem; /* Mantenido de tu CSS */
+  margin-bottom: 1.5rem; /* Mantenido de tu CSS */
   max-width: 400px;
 }
 
@@ -106,10 +103,8 @@ header h1 {
 button {
   padding: 7px 10px;
   margin: auto;
-  font-size: auto;
-  /* Tu regla existente */
-  font-size: 1rem;
-  /* Nueva regla para corregir y dar un tamaño base */
+  font-size: auto; /* Tu regla existente (inválida, pero mantenida) */
+  font-size: 1rem; /* Nueva regla para corregir y dar un tamaño base */
   cursor: pointer;
   background-color: #2980b9;
   color: white;
@@ -126,38 +121,37 @@ table {
   margin-top: 5px;
   font-size: 20px;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgb(63, 63, 63);
   border-radius: 8px;
   overflow: hidden;
 }
 
 /* Estilos existentes para th,td */
-
 td {
-  text-align: auto;
-  margin: 55px 15px;
-  border-bottom: 2px solid #cacaca;
-  padding: auto;  /* Ajuste de padding para mayor espacio */
-  border-bottom: 2px solid #ecf0f1;  /* Borde más suave */
-  font-size: 0.9rem; /* Tamaño de fuente*/
+  text-align: left; /* Corregido de 'auto' */
+  margin: 55px 15px; /* Mantenido de tu CSS (inusual para td) */
+  border-bottom: 2px solid #cacaca; /* Mantenido de tu CSS */
+  padding: 1rem; /* Ajuste de padding para mayor espacio (unificado) */
+  border-bottom: 2px solid #e7e7e7; /* Borde más suave (unificado) */
+  font-size: 0.9rem; /* Tamaño de fuente */
 }
 
 /* Estilos existentes para th */
 th {
-  background-color: #34495e; /* Color de fondo más oscuro */
+  background-color: #34495e; /* Color de fondo más oscuro (unificado) */
   color: white;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 1rem;  /* Tamaño de fuente más pequeño para encabezados */
-  text-align: left;
-  border-bottom: 2px solid #cacaca;
-  padding: 1rem;  /* Ajuste de padding para mayor espacio */
-  border-bottom: 1px solid #ecf0f1;  /* Borde más suave */
+  font-size: 1rem; /* Tamaño de fuente más pequeño para encabezados (unificado) */
+  text-align: left; /* Mantenido de tu CSS */
+  border-bottom: 2px solid #cacaca; /* Mantenido de tu CSS */
+  padding: 1rem; /* Ajuste de padding para mayor espacio (unificado) */
+  border-bottom: 1px solid #ecf0f1; /* Borde más suave (unificado) */
 }
 
 /* Estilos existentes para tr:nth-child(even) */
 tr:nth-child(even) {
-  background-color: #f9f9f9; /* Color más claro */
+  background-color: #f9f9f9; /* Color más claro (unificado) */
 }
 
 /* Estilos existentes para .btn-accion */
@@ -168,7 +162,7 @@ tr:nth-child(even) {
   margin: 0 2px;
   border-radius: 4px;
   cursor: pointer;
-  padding: 0.5rem 0.8rem; /* Nuevos estilos para .btn-accion */
+  padding: 0.5rem 0.8rem; /* Nuevos estilos para .btn-accion (unificado) */
   font-size: 0.85rem;
 }
 
@@ -183,7 +177,6 @@ tr:nth-child(even) {
 }
 
 /* --- Estilos del Dashboard (movidos de inventario.html) --- */
-
 .container {
   display: flex;
   flex: 1;
@@ -195,7 +188,8 @@ tr:nth-child(even) {
   margin-top: 2rem;
   max-width: 900px;
   box-sizing: border-box;
-}
+  flex-direction: column;
+  }
 
 aside {
   width: 250px;
@@ -278,11 +272,30 @@ main {
   padding-bottom: 0.5rem;
 }
 
+/* Estilos para la sección del formulario (inputs y botón agregar) */
+.form-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: end;
+}
+
+/* Estilos para el estado de foco de los inputs */
+.input:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 0 2px rgba(41, 128, 185, 0.2);
+}
+
 /* Estilos específicos para el botón de inicio */
 #btnAgregar {
+  width: 50px;
+  padding: 10px 0px;
+  font-size: 25px;
   background-color: #2c3e50;
   grid-column: 1 / -1;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 #btnAgregar:hover {
@@ -329,38 +342,28 @@ td:last-child {
     gap: 0.5rem;
     padding: 1rem;
   }
-
-  .container {
-    flex-direction: column;
-    width: 100%;
-  }
-
+   
   aside {
     width: 100%;
     padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Corregido de rgba(255,0,0,0.1) */
   }
-
   aside nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
   }
-
   aside nav ul li {
     margin-bottom: 0;
   }
-
   aside nav ul li a {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
   }
-
   main {
     padding: 1.5rem;
   }
-
   table,
   thead,
   tbody,
@@ -369,20 +372,17 @@ td:last-child {
   tr {
     display: block;
   }
-
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
-
   tr {
     border: 1px solid #ccc;
     margin-bottom: 1rem;
     border-radius: 8px;
     overflow: hidden;
   }
-
   td {
     border: none;
     border-bottom: 1px solid #eee;
@@ -390,7 +390,6 @@ td:last-child {
     padding-left: 50%;
     text-align: right;
   }
-
   td:before {
     position: absolute;
     top: 0;
@@ -402,35 +401,27 @@ td:last-child {
     font-weight: bold;
     color: #34495e;
   }
-
   td:nth-of-type(1):before {
     content: "ID";
   }
-
   td:nth-of-type(2):before {
     content: "Nombre";
   }
-
   td:nth-of-type(3):before {
     content: "Laboratorio";
   }
-
   td:nth-of-type(4):before {
     content: "Lote";
   }
-
   td:nth-of-type(5):before {
     content: "Cantidad";
   }
-
   td:nth-of-type(6):before {
     content: "Costo";
   }
-
   td:nth-of-type(7):before {
     content: "Acciones";
   }
-
   td:last-child {
     border-bottom: none;
     text-align: right;
