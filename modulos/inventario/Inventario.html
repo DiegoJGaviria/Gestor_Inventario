@@ -4,22 +4,23 @@
 <head>
   <title>Inventario</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
   <h1>Gestor De Inventarios</h1>
+  <h1><button id="btnAgregar" onclick="irAInicio()">inicio</button></h1>
 
-  <input class="input nombre" placeholder="Nombre del producto">
-  
-  <input class="input cantidad" type="number" placeholder="Cantidad">
-  <input class="input laboratorio" placeholder="Laboratorio">
-  <input class="input lote" placeholder="Lote">
-  <input class="input costo" type="number" placeholder="Costo">
+  <body>
+    Nombre: <input class="input nombre" placeholder="Nombre del producto">
+    Cantidad: <input class="input cantidad" type="number">
+    Laboratorio: <input class="input laboratorio">
+    Lote: <input class="input lote">
+    Costo: <input class="input costo" type="number" placeholder="$"> </body>
 
-  <button id="btnGuardar" onclick="agregarProductoDesdeUI()">Agregar</button>
+  <button id="btnGuardar" onclick="agregarProductoDesdeUI()"><i class="fa fa-plus"></i>Agregar</button>
   <input class="ionput filtro" placeholder="Buscar Producto" oninput="filtrarInventario()">
- 
+
 
 
   <table id="tabla-inventario">
@@ -40,7 +41,7 @@
 
 
 
-  <script src="app.js"></script>
+  <script src="../inventario/inventario.js"></script>
 </body>
 
 </html>

@@ -179,6 +179,10 @@ function filtrarInventario() {
       `;
       tabla.appendChild(fila);
     });
+    
+}
+function irAInicio() {
+  window.location.href = "../Inicio/inicio.html";
 }
 
 // ✅ Mostrar inventario al cargar
