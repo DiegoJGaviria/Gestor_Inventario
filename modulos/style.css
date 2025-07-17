@@ -1,24 +1,55 @@
 /* Dashboard y estilos generales */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f7f6;
-  margin: 10px;
   padding: 0;
   min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+
 }
+
+.body-inicio {
+  background-color: #ecf0f1;
+  margin: 0;
+}
+
+.body-inventario {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  background-color: #ecf0f1;
+  margin: 10px;
+  align-items: auto;
+}
+
+.form-crear-producto {
+  
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 0.5rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.form-crear-producto label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+}
+
 
 header {
   background-color: #2c3e50;
+  margin: 0;
   color: white;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px #2c3e50;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ;
 }
 
 .main-layout {
@@ -33,9 +64,9 @@ header {
 }
 
 header h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  background-color: #000000;
+  margin: 1px 10px;
+  font-size: 2rem;
+  background-color: #00000000;
 }
 
 .container {
@@ -65,9 +96,10 @@ header h1 {
 
 aside {
   width: 250px;
+  margin: 0;
   background-color: #34495e;
   color: white;
-  padding: 1.5rem 1rem;
+  padding: 5rem 1rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -162,7 +194,7 @@ main {
 }
 
 .nombre {
-  width: 650px;
+  width: 550px;
   margin-bottom: 0.2rem;
   margin: 5px 5x;
   padding: 5px 5px;
@@ -170,9 +202,18 @@ main {
   border: 2px solid #bdc3c7;
   border-radius: 6px;
 }
-
+.iva{
+  width: 50px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+}
+.costo,
 .cantidad {
-  width: 100px;
+  width: 90px;
   margin-bottom: 0.2rem;
   margin: 5px 5x;
   padding: 5px 5px;
@@ -181,17 +222,7 @@ main {
   border-radius: 6px;
 }
 
-.laboratorio {
-  width: 200px;
-  margin-bottom: 0.2rem;
-  margin: 5px 5x;
-  padding: 5px 5px;
-  box-sizing: border-box;
-  border: 2px solid #bdc3c7;
-  border-radius: 6px;
-}
-
-.lote {
+.invima,.laboratorio {
   width: 150px;
   margin-bottom: 0.2rem;
   margin: 5px 5x;
@@ -201,7 +232,29 @@ main {
   border-radius: 6px;
 }
 
-.costo {
+.cum,.lote {
+  width: 130px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+}
+
+
+.fecha {
+  width: 150px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+}
+
+
+.fecha-Vencimiento {
   width: 120px;
   margin-bottom: 0.2rem;
   margin: 5px 5x;
@@ -218,7 +271,7 @@ main {
 }
 
 .filtro {
-  width: 350px;
+  width: 3500px;
   padding: 5px 0px;
   display: flex;
   margin: 5px 5px;
@@ -227,11 +280,20 @@ main {
   border: 2px solid #bdc3c7;
 }
 
+.filtro-icon {
+  padding: 0;
+  display: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 1.2rem;
+}
+
 /* Botones */
 button,
 .btn-accion {
-  padding: 7px 10px;
-  font-size: 1rem;
+  padding: 4px 7px;
+  font-size: auto;
   cursor: pointer;
   background-color: #2980b9;
   color: white;
@@ -239,6 +301,7 @@ button,
   border-radius: 5px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
+  align-items: center;
 }
 
 .btn-accion {
@@ -332,6 +395,14 @@ td:last-child {
   grid-column: 1 / -1;
   margin-bottom: 0;
 }
+.btnAgregarUsuario {
+    width: 10px;
+  padding: 10px 24px;
+  font-size: 1.2rem;
+  min-width: 120px;
+  
+
+}
 
 #btnInicio {
   width: 50px;
@@ -349,8 +420,11 @@ td:last-child {
 }
 
 #btnGuardar {
+  align-self: end;
+  height: 38px;
+  margin-top: 1.2rem;
   grid-column: span 2;
-  width: 100px;
+  width: 100%;
   padding: 10px 10px;
   margin: 15px;
 }
@@ -363,6 +437,10 @@ td:last-child {
     margin-top: 1rem;
     max-width: 100%;
     flex: 1
+  }
+
+  .title-inicio {
+    flex-direction: row;
   }
 
   aside {
@@ -442,6 +520,19 @@ td:last-child {
     border-bottom: none;
     text-align: right;
   }
+
+.roll{
+ width: 90px;
+  margin-bottom: 0.2rem;
+  margin: 5px 5x;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
 }
+
+
+}
+
 
 /* Puedes agregar más media queries si lo necesitas */

@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventario Web</title>
+    <title>Gestión de Usuarios</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-<body>
+<body class="body-inicio">
     <header>
+        <h1 class="sidebar-title">Menú Principal</h1>
         <nav class="header-nav">
             <a href="#" class="header-link">Perfil</a>
             <a href="#" class="header-link">Configuración</a>
-        </nav>    </header>
-    
+        </nav>
+    </header>
     <div class="main-layout">
         <aside>
             <h2 class="sidebar-title">Menú Principal</h2>
             <nav aria-label="Navegación principal del dashboard">
                 <ul>
-                    <li><a href="#" class="active">Inicio</a></li>
-                    <li><a href="#">Usuarios</a></li>
+                      <li><a href="../inicio/inicio.html">Inicio</a></li>
+                    <li><a href="../usuarios/usuario.html" class="active">Usuarios</a></li>
                     <li><a href="../inventario/Inventario.html">Inventario</a></li>
                     <li><a href="#">Pedidos</a></li>
                     <li><a href="#">Reportes</a></li>
@@ -35,24 +35,25 @@
                 <div class="card-grid">
                     <div class="card">
                         <h2>Ventas Totales</h2>
-                        <p>info???</p>
+                        <p id="ventasTotales"></p>
                     </div>
                     <div class="card">
                         <h2>Nuevos Usuarios</h2>
-                        <p>info???</p>
+                        <p id="nuevosUsuarios"></p>
                     </div>
                     <div class="card">
                         <h2>Pedidos Pendientes</h2>
-                        <p>info???</p>
+                        <p id="pedidosPendientes"></p>
                     </div>
                     <div class="card">
                         <h2>Productos en Stock</h2>
-                        <p>info???</p>
+                        <p id="productosStock"></p>
                     </div>
                 </div>
-                <script src="inicio.js"></script>
+                <script src="../Funciones.js"></script>
             </main>
         </div>
     </div>
 </body>
+
 </html>

@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Inventario</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../style.css">
 </head>
-
-<body>
+<body class="body-inventario">
   <h1>Gestor De Inventarios</h1>
-  <h1><button id="btnInicio" onclick="irAInicio()"><i class="fa fa-home"></i></button></h1>
+  <button id="btnInicio" onclick="irAInicio()"><i class="fa fa-home"></i></button>
 
-  <body>
-    <h4>Nombre: <input class="input nombre">
-    Cantidad: <input class="input cantidad" type="number">
-    Laboratorio: <input class="input laboratorio">
-    Lote: <input class="input lote">
-    Costo: <input class="input costo" type="number" placeholder="$"> </body>
+  <!-- Formulario organizado y corregido -->
+  <div class="form-crear-producto">
+    <label>Nombre: <input class="input nombre"></label>
+    <label>Nombre Comercial: <input class="input ncomercial"></label>
+    <label>Cantidad: <input class="input cantidad" type="number"></label>
+    <label>Laboratorio: <input class="input laboratorio"></label>
+    <label>Lote: <input class="input lote"></label>
+    <label>Fecha De Vencimiento: <input class="fecha-Vencimiento" type="date"></label>
+    <label>Cum: <input class="input cum" type="text"></label>
+    <label>Invima: <input class="input invima" type="text"></label>
+    <label>Costo: <input class="input costo" type="number" placeholder="$"></label>
+    <label>IVA: <input class="input iva" type="number" placeholder="%"></label>
+    <button id="btnGuardar" onclick="agregarProductoDesdeUI()"><i class="fa fa-plus"></i> Agregar</button>
+</div>
 
-  <button id="btnGuardar" onclick="agregarProductoDesdeUI()"><i class="fa fa-plus"></i> Agregar</button>
-  </h4>
-  <input class="ionput filtro" placeholder="Buscar Producto" oninput="filtrarInventario()">
+  <!-- Filtro corregido (clase input, no ionput) -->
+  <div class="filtro-inventario" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+    <input class="input filtro" placeholder="Buscar Producto" oninput="filtrarInventario()">
+    <i class="fa fa-search"></i>
+  </div>
 
-
-
-  <table id="tabla-inventario">
+  <table id="tabla-inventario" style="margin-top: 1rem;">
     <thead>
       <tr>
         <th>ID</th>
         <th>Nombre Del Producto</th>
+        <th>Nombre Comercial</th>
         <th>Laboratorio</th>
         <th>Lote</th>
+        <th>Fecha De Vencimiento</th>
+        <th>Cum</th>
+        <th>Invima</th>
         <th>Cantidad</th>
         <th>Costo</th>
+        <th>Iva</th>
         <th></th>
       </tr>
     </thead>
     <tbody id="inventario"></tbody>
-    </tbody>
   </table>
 
-
-
-  <script src="../inventario/inventario.js"></script>
+  <script src="../funciones.js"></script>
 </body>
-
 </html>
