@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Principal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body class="body-inicio">
+  <header>
+    <h1>Menu Principal</h1>
+    <nav class="header-nav">
+      <a href="perfil.html" class="header-link">Perfil</a>
+      <a href="configuracion.html" class="header-link">Configuracion</a>
+    </nav>
+
+  </header>
+
+  <div class="main-layout">
+
+    <aside>
+      <button id="btnSidebar">=</button></i></button>
+      <nav>
+        <ul>
+          <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="usuario.html"><i class="fa fa-users"></i>Usuarios</a></li>
+          <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+          <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
+          <li><a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a></li>
+          <li><a href="configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+          <li><a href="ajustes.html"><i class="fas fa-sliders-h"></i> Ajustes</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="dashboard-cards">
+        <div class="dashboard-card">
+          <i class="fa fa-boxes-stacked"></i>
+          <div class="big" id="totalProductos">0</div>
+          <div class="desc">Productos en inventario</div>
+        </div>
+        <div class="dashboard-card">
+          <i class="fa fa-users"></i>
+          <div class="big" id="totalUsuarios">0</div>
+          <div class="desc">Usuarios registrados</div>
+        </div>
+        <div class="dashboard-card">
+          <i class="fa fa-truck"></i>
+          <div class="big" id="totalPedidos">0</div>
+          <div class="desc">Pedidos activos</div>
+        </div>
+        <div class="dashboard-card">
+          <i class="fa fa-chart-line"></i>
+          <div class="big" id="totalReportes">0</div>
+          <div class="desc">Reportes generados</div>
+        </div>
+        <div class="dashboard-card">
+          <i class="fa fa-user-cog"></i>
+          <div class="big" id="totalAjustes">5</div>
+          <div class="desc">Opciones de configuracion</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script>
+    // Simulacion de datos para el dashboard
+    document.getElementById('totalProductos').textContent = 5; // Cambia segun tu inventario real
+    document.getElementById('totalUsuarios').textContent = 3; // Cambia segun tus usuarios reales
+    document.getElementById('totalPedidos').textContent = 3; // Simulado
+    document.getElementById('totalReportes').textContent = 7; // Simulado
+  </script>
+</body>
+
+</html>
