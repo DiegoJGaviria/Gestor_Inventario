@@ -11,66 +11,74 @@
 </head>
 
 <body class="body-inicio">
-    <header>
-        <h1>Gestor De Usuarios</h1>
-        <nav class="header-nav">
-            <a href="perfil.html" class="header-link">Perfil</a>
-            <a href="configuracion.html" class="header-link">Configuracion</a>
+    <button id="btnSidebar"><i class="fa fa-bars"></i></button>
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="usuario.html"><i class="fa fa-users"></i>Usuarios</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+                <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
+                <li><a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a></li>
+                <li><a href="configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+                <li><a href="ajustes.html"><i class="fas fa-sliders-h"></i> Ajustes</a></li>
+            </ul>
         </nav>
+    </aside>
+
+    <header>
+        <h1>----------</h1>
     </header>
     <div class="main-layout">
-        <aside>
-            <button id="btnSidebar">=</button></i></button>
-            <nav>
-                <ul>
-                    <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="usuario.html"><i class="fa fa-users"></i>Usuarios</a></li>
-                    <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
-                    <li><a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a></li>
-                    <li><a href="configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
-                    <li><a href="ajustes.html"><i class="fas fa-sliders-h"></i> Ajustes</a></li>
-                </ul>
-            </nav>
-        </aside>
 
-        
-            <main>
-                <h2 class="section-title">Gestor De Usuarios</h2>
-                <form id="formUsuario" style="margin-bottom: 1.5rem;">
-                    <label>Nombre Completo: <input class="input nombre" type="text" id="nombreUsuario" required></label>
-                    <label>Email: <input class="input email" type="email" id="emailUsuario" required></label>
-                    <label>Rol:
-                        <select class="input roll" id="rolUsuario">
-                            <option value="Administrador/a">Administrador/a</option>
-                            <option value="Coordinador/a">Coordinador/a</option>
-                            <option value="Usuario">Usuario</option>
-                            <option value="Aprendiz">Aprendiz</option>
-                        </select>
-                    </label>
-                    <button type="submit" id="btnAgregarUsuario"><i class="fa fa-plus"></i> Agregar</button>
-                </form>
-                <div class="filtro-inventario">
+        <main>
+            <h2 class="section-title">Gestor De Usuarios</h2>
+            <form id="formUsuario" style="margin-bottom: 1.5rem;">
+                <label>Nombre Completo: <input class="input nombre" type="text" id="nombreUsuario" required></label>
+                <label>Email: <input class="input email" type="email" id="emailUsuario" required></label>
+                <label>Rol:
+                    <select class="input roll" id="rolUsuario">
+                        <option value="Administrador/a">Administrador/a</option>
+                        <option value="Coordinador/a">Coordinador/a</option>
+                        <option value="Usuario">Usuario</option>
+                        <option value="Aprendiz">Aprendiz</option>
+                    </select>
+                </label>
+                <button type="submit" id="btnAgregarUsuario"><i class="fa fa-plus"></i> Agregar</button>
+            </form>
+            <div class="filtro-inventario">
 
-                    <input class="input filtro" placeholder=" Buscar usuario" id="buscarUsuario">
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Rol</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaUsuarios"></tbody>
-                </table>
-            </main>
-        
+                <input class="input filtro" placeholder=" Buscar usuario" id="buscarUsuario">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaUsuarios"></tbody>
+            </table>
+        </main>
+
     </div>
     <script src="Funciones.js"></script>
     <script>
+        const btnSidebar = document.getElementById('btnSidebar');
+        const sidebar = document.getElementById('sidebar');
+        btnSidebar.onclick = function () {
+            sidebar.classList.toggle('open');
+
+        };
+
+        document.addEventListener('click', function (e) {
+            if (!sidebar.contains(e.target) && !btnSidebar.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
         // Evento para agregar usuario
         document.getElementById('formUsuario').onsubmit = function (e) {
             e.preventDefault();

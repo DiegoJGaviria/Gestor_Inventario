@@ -7,16 +7,10 @@
     <title>Usuarios</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        #btnAgregarUsuario {
-            font-size: 1.2rem;
-            padding: 10px 24px;
-            min-width: 120px;
-        }
-    </style>
 </head>
 
 <body class="body-inicio">
+    <button id="btnSidebar"><i class="fa fa-bars"></i></button>
     <header>
         <h1 class="sidebar-title">Gestion De Reportes</h1>
         <nav class="header-nav">
@@ -25,8 +19,8 @@
         </nav>
     </header>
     <div class="main-layout">
-        <aside>
-            <button id="btnSidebar">=</button></i></button>
+        <aside class="sidebar" id="sidebar">
+            
             <nav>
                 <ul>
                     <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
@@ -40,6 +34,20 @@
             </nav>
         </aside>
     </div>
+    <script>
+        const btnSidebar = document.getElementById('btnSidebar');
+        const sidebar = document.getElementById('sidebar');
+        btnSidebar.onclick = function () {
+            sidebar.classList.toggle('open');
+
+        };
+
+        document.addEventListener('click', function (e) {
+            if (!sidebar.contains(e.target) && !btnSidebar.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 
 </html>

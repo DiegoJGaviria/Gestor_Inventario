@@ -42,6 +42,8 @@ body {
 
 
 header {
+  top: 5rem;
+  left: 5rem;
   background-color: rgba(0, 62, 116, 0.997);
   margin: 0;
   color: white;
@@ -64,7 +66,9 @@ header {
 }
 
 header h1 {
-  margin: 1px 10px;
+  left: auto;
+  top: 5x;
+  margin: 1px 50px;
   font-size: 2rem;
   background-color: #00000000;
 }
@@ -108,7 +112,8 @@ aside {
 
 aside nav ul {
   list-style: none;
-  padding: 0;
+  
+  padding: 5;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -143,7 +148,7 @@ main {
 
 .section-title {
   font-size: 2rem;
-  color: #2c3e50;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #bdc3c7;
   padding-bottom: 0.5rem;
@@ -399,7 +404,8 @@ td:last-child {
   grid-column: 1 / -1;
   margin-bottom: 0;
 }
-#btnSidebar{
+
+#btnSidebar {
   width: 40px;
   padding: 1px 1px;
   align-items: center;
@@ -610,7 +616,78 @@ td:last-child {
 .dashboard-quicklinks a:hover {
   background: #124e1f;
   color: #ffffff;
-    
+
+}
+
+aside.sidebar {
+  width: 240px;
+  background: rgba(0, 62, 116, 0.748);
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+  z-index: 100;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px #0003;
+}
+
+aside.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin: 1.2rem 0;
+}
+
+.sidebar-nav a {
+  color: rgba(255, 255, 255, 0.997);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem 4rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(0, 62, 116, 0.997);
+  color: #ffffff;
+}
+
+/* Boton hamburguesa */
+#btnSidebar {
+  position: fixed;
+  top: 0.6rem;
+  left: 0.6rem;
+  background: rgba(9, 192, 247, 0.781);
+  color: #ffffff;
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 1.0.1rem;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+  z-index: 101;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.133);
+}
+
+/* Espacio para el contenido principal */
+.main-layout {
+  margin-left: 0;
+  transition: margin-left 0.3s;
+}
+
+.sidebar.open~.main-layout {
+  margin-left: 240px;
 }
 
 /* Puedes agregar más media queries si lo necesitas */

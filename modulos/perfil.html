@@ -9,31 +9,48 @@
 </head>
 
 <body class="body-inicio">
-  <header>
-    <h1>Perfil de Usuario</h1>
-    <nav class="header-nav">
-      <a href="perfil.html" class="header-link">Perfil</a>
-      <a href="configuracion.html" class="header-link">Configuracion</a>
+  <button id="btnSidebar"><i class="fa fa-bars"></i></button>
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="usuario.html"><i class="fa fa-users"></i>Usuarios</a></li>
+        <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+        <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
+        <li><a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a></li>
+        <li><a href="configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+        <li><a href="ajustes.html"><i class="fas fa-sliders-h"></i> Ajustes</a></li>
+      </ul>
     </nav>
-
+  </aside>
+  <header>
+   <h2 class="section-title">Perfil</h2>
+            <form id="formUsuario" style="margin-bottom: 1.5rem;">
+                <li>Nombre Completo: <input class="input nombre" type="text" id="nombreUsuario" required></li>
+                <li>Email: <input class="input email" type="email" id="emailUsuario" required></li>
+                
+                    
+                
+                
+            </form>
   </header>
-
   <div class="main-layout">
-    <aside>
-       <button id="btnSidebar">=</button></i></button>
-      <nav>
-        <ul>
-                    <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="usuario.html"><i class="fa fa-users"></i>Usuarios</a></li>
-                    <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
-                    <li><a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a></li>
-                    <li><a href="configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
-                    <li><a href="ajustes.html"><i class="fas fa-sliders-h"></i> Ajustes</a></li>
-                </ul>
-      </nav>
-    </aside>
+
   </div>
+  <script>
+    const btnSidebar = document.getElementById('btnSidebar');
+        const sidebar = document.getElementById('sidebar');
+        btnSidebar.onclick = function () {
+            sidebar.classList.toggle('open');
+
+        };
+
+        document.addEventListener('click', function (e) {
+            if (!sidebar.contains(e.target) && !btnSidebar.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+  </script>
 
 </body>
 

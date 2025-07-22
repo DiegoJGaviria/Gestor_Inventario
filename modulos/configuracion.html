@@ -9,12 +9,12 @@
 </head>
 
 <body class="body-inicio">
+  <button id="btnSidebar"><i class="fa fa-bars"></i></button>
   <header>
     <h1>Configuracion Avanzada</h1>
   </header>
   <div class="main-layout">
-    <aside>
-      <button id="btnSidebar">=</button></i></button>
+    <aside class="sidebar" id="sidebar">
       <nav>
         <ul>
           <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
@@ -28,6 +28,20 @@
       </nav>
     </aside>
   </div>
+  <script>
+  const btnSidebar = document.getElementById('btnSidebar');
+        const sidebar = document.getElementById('sidebar');
+        btnSidebar.onclick = function () {
+            sidebar.classList.toggle('open');
+
+        };
+
+        document.addEventListener('click', function (e) {
+            if (!sidebar.contains(e.target) && !btnSidebar.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+        </script>
 </body>
 
 </html>
