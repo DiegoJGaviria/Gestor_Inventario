@@ -18,18 +18,30 @@ body {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   background-color: #ecf0f1;
-  margin: 10px;
+  margin: 0;
   align-items: auto;
 }
 
-.form-crear-producto {
-
-  display: grid;
+.form-filtrar-producto {
+  margin: 10px;
+  display: flex;
   grid-template-columns: repeat(11, 1fr);
   gap: 0.5rem;
   align-items: end;
-  margin-bottom: 1.5rem;
-  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0px;
+  margin-left: 15px;
+}
+
+.form-crear-producto {
+  margin: 1px;
+  display: flex;
+  grid-template-columns: repeat(11, 1fr);
+  gap: .5rem;
+  align-items: end;
+  margin-bottom: 0;
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
 .form-crear-producto label {
@@ -51,7 +63,20 @@ header {
   box-shadow: 0 2px 4px #7cbdff;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: auto;
+}
+
+.headerinventario {
+  top: 5rem;
+  left: 5rem;
+  background-color: rgba(0, 62, 116, 0.997);
+  margin: -10;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px #7cbdff;
+  display: flex;
+  justify-content: space-between;
+  align-items: auto;
 }
 
 .main-layout {
@@ -148,7 +173,7 @@ main {
 
 .section-title {
   font-size: 2rem;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #bdc3c7;
   padding-bottom: 0.5rem;
@@ -312,6 +337,14 @@ button,
   white-space: nowrap;
   align-items: center;
 }
+#btnExcel{
+  display: flex;
+  padding: 8px;
+  width: 170px;
+  background-color: #2980b9;
+  margin: 4px;
+  align-items: center;
+}
 
 .btn-accion {
   background-color: #6d6d6d;
@@ -346,7 +379,8 @@ button,
 
 /* Tablas */
 table {
-  width: 100%;
+  margin: 10px;
+  width: auto;
   border-collapse: collapse;
   margin-top: 5px;
   font-size: 20px;
@@ -371,7 +405,7 @@ td {
   text-align: left;
   padding: 1rem;
   border-bottom: 2px solid #e7e7e7;
-  font-size: 0.9rem;
+  font-size: 0.81rem;
 }
 
 tr:nth-child(even) {
@@ -444,13 +478,13 @@ td:last-child {
 }
 
 #btnGuardar {
-  align-self: end;
+  display: flex;
+  align-items: center;
   height: 38px;
-  margin-top: 1.2rem;
+  margin-top: 0;
   grid-column: span 2;
-  width: 100%;
-  padding: 10px 10px;
-  margin: 15px;
+  width: 85px;
+  margin: 6px;
 }
 
 /* Responsive */

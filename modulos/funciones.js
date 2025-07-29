@@ -4,7 +4,18 @@ let inventario = [
   { id: 2, nombre: 'AMOXICILINA 500 MG CÁPSULA CJA X 100', ncomercial: 'AMOXIDAL', Laboratorio: 'ROEMMERS', Lote: 'BX892', fechaVencimiento: '2026-03-15', cum: '19953215-2', invima: '2016M-0012043', cantidad: '1200', costo: '3200', iva: '0' },
   { id: 3, nombre: 'LORATADINA 10 MG TABLETA CJA X 30', ncomercial: 'LORATEX', Laboratorio: 'GENFAR', Lote: 'LT773', fechaVencimiento: '2025-09-30', cum: '20046271-1', invima: '2007M-0006792', cantidad: '950', costo: '1800', iva: '0' },
   { id: 4, nombre: 'IBUPROFENO 400 MG TABLETA CJA X 100', ncomercial: 'DOLPRIN', Laboratorio: 'TECNOQUIMICAS', Lote: 'IB005', fechaVencimiento: '2025-11-20', cum: '19997116-3', invima: '2011M-0012310', cantidad: '1800', costo: '2900', iva: '0' },
-  { id: 5, nombre: 'METFORMINA 850 MG TABLETA CJA X 60', ncomercial: 'GLAFORNIL', Laboratorio: 'LAFRANCOL', Lote: 'MF234', fechaVencimiento: '2026-01-05', cum: '19963598-1', invima: '2013M-0002416', cantidad: '1100', costo: '2500', iva: '0' }
+  { id: 5, nombre: 'METFORMINA 850 MG TABLETA CJA X 60', ncomercial: 'GLAFORNIL', Laboratorio: 'LAFRANCOL', Lote: 'MF234', fechaVencimiento: '2026-01-05', cum: '19963598-1', invima: '2013M-0002416', cantidad: '1100', costo: '2500', iva: '0' },
+  { id: 6, nombre: 'ACETAMINOFEN 325 MG + HIDROCODONA 5 MG TAB CJA X 30 B/5', ncomercial: 'FENALGEX', Laboratorio: 'TECNOQUIMICAS', Lote: 'AG001', fechaVencimiento: '2025-12-31', cum: '20103181-5', invima: '2017M-0017664', cantidad: '1500', costo: '5000', iva: '0' },
+  { id: 7, nombre: 'AMOXICILINA 500 MG CÁPSULA CJA X 100', ncomercial: 'AMOXIDAL', Laboratorio: 'ROEMMERS', Lote: 'BX892', fechaVencimiento: '2026-03-15', cum: '19953215-2', invima: '2016M-0012043', cantidad: '1200', costo: '3200', iva: '0' },
+  { id: 8, nombre: 'LORATADINA 10 MG TABLETA CJA X 30', ncomercial: 'LORATEX', Laboratorio: 'GENFAR', Lote: 'LT773', fechaVencimiento: '2025-09-30', cum: '20046271-1', invima: '2007M-0006792', cantidad: '950', costo: '1800', iva: '0' },
+  { id: 9, nombre: 'IBUPROFENO 400 MG TABLETA CJA X 100', ncomercial: 'DOLPRIN', Laboratorio: 'TECNOQUIMICAS', Lote: 'IB005', fechaVencimiento: '2025-11-20', cum: '19997116-3', invima: '2011M-0012310', cantidad: '1800', costo: '2900', iva: '0' },
+  { id: 10, nombre: 'METFORMINA 850 MG TABLETA CJA X 60', ncomercial: 'GLAFORNIL', Laboratorio: 'LAFRANCOL', Lote: 'MF234', fechaVencimiento: '2026-01-05', cum: '19963598-1', invima: '2013M-0002416', cantidad: '1100', costo: '2500', iva: '0' },
+  { id: 11, nombre: 'ACETAMINOFEN 325 MG + HIDROCODONA 5 MG TAB CJA X 30 B/5', ncomercial: 'FENALGEX', Laboratorio: 'TECNOQUIMICAS', Lote: 'AG001', fechaVencimiento: '2025-12-31', cum: '20103181-5', invima: '2017M-0017664', cantidad: '1500', costo: '5000', iva: '0' },
+  { id: 12, nombre: 'AMOXICILINA 500 MG CÁPSULA CJA X 100', ncomercial: 'AMOXIDAL', Laboratorio: 'ROEMMERS', Lote: 'BX892', fechaVencimiento: '2026-03-15', cum: '19953215-2', invima: '2016M-0012043', cantidad: '1200', costo: '3200', iva: '0' },
+  { id: 13, nombre: 'LORATADINA 10 MG TABLETA CJA X 30', ncomercial: 'LORATEX', Laboratorio: 'GENFAR', Lote: 'LT773', fechaVencimiento: '2025-09-30', cum: '20046271-1', invima: '2007M-0006792', cantidad: '950', costo: '1800', iva: '0' },
+  { id: 14, nombre: 'IBUPROFENO 400 MG TABLETA CJA X 100', ncomercial: 'DOLPRIN', Laboratorio: 'TECNOQUIMICAS', Lote: 'IB005', fechaVencimiento: '2025-11-20', cum: '19997116-3', invima: '2011M-0012310', cantidad: '1800', costo: '2900', iva: '0' },
+  { id: 15, nombre: 'METFORMINA 850 MG TABLETA CJA X 60', ncomercial: 'GLAFORNIL', Laboratorio: 'LAFRANCOL', Lote: 'MF234', fechaVencimiento: '2026-01-05', cum: '19963598-1', invima: '2013M-0002416', cantidad: '1100', costo: '2500', iva: '0' }
+
 ];
 let idEditando = null;
 
@@ -204,7 +215,7 @@ function renderUsuarios(filtro = "") {
 }
 
 // Funcion para editar usuario: carga los datos en el formulario y cambia el boton a "Actualizar"
-window.editarUsuario = function(id) {
+window.editarUsuario = function (id) {
   const usuario = usuarios.find(u => u.id === id);
   if (!usuario) return;
   document.getElementById('nombreUsuario').value = usuario.nombre;
@@ -212,7 +223,7 @@ window.editarUsuario = function(id) {
   document.getElementById('rolUsuario').value = usuario.rol;
   const btnGuardar = document.getElementById('btnAgregarUsuario');
   btnGuardar.innerHTML = '<i class="fa fa-rotate-right"></i> Actualizar';
-  btnGuardar.onclick = function(e) {
+  btnGuardar.onclick = function (e) {
     e.preventDefault();
     actualizarUsuario(id);
   };
@@ -233,7 +244,7 @@ function actualizarUsuario(id) {
   usuario.email = email;
   usuario.rol = rol;
   document.getElementById('btnAgregarUsuario').innerHTML = '<i class="fa fa-plus"></i> Agregar';
-  document.getElementById('btnAgregarUsuario').onclick = function(e) {
+  document.getElementById('btnAgregarUsuario').onclick = function (e) {
     e.preventDefault();
     agregarUsuarioDesdeUI();
   };
@@ -264,7 +275,7 @@ function agregarUsuarioDesdeUI() {
 }
 
 // Eliminar usuario
-window.eliminarUsuario = function(id) {
+window.eliminarUsuario = function (id) {
   usuarios = usuarios.filter(u => u.id !== id);
   renderUsuarios(document.getElementById('buscarUsuario') ? document.getElementById('buscarUsuario').value : "");
 };
@@ -277,3 +288,59 @@ function irAInicio() {
 // Mostrar inventario al cargar
 if (document.getElementById('inventario')) mostrarInventario();
 if (document.getElementById('tablaUsuarios')) renderUsuarios();
+
+//Funcion Descargar Resporte CSV
+function descargarExcel() {
+  let csv = "ID,Nombre,Nombre Comercial,Laboratorio,Lote,Fecha De Vencimiento,Cum,Invima,Cantidad,Costo,Iva\n";
+  inventario.forEach(item => {
+    csv += `P${item.id},"${item.nombre}","${item.ncomercial}","${item.Laboratorio}","${item.Lote}","${item.fechaVencimiento}","${item.cum}","${item.invima}",${item.cantidad},${item.costo},${item.iva}\n`;
+  });
+  const blob = new Blob([csv], { type: "text/csv" });
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "BD-inventario.csv";
+  a.click();
+  window.URL.revokeObjectURL(url);
+}
+
+function downloadXls() {
+  const data = inventario.map(item => ({
+    ID: `P${item.id}`,
+    Nombre: item.nombre,
+    "Nombre Comercial": item.ncomercial,
+    Laboratorio: item.Laboratorio,
+    Lote: item.Lote,
+    "Fecha De Vencimiento": item.fechaVencimiento,
+    Cum: item.cum,
+    Invima: item.invima,
+    Cantidad: item.cantidad,
+    Costo: item.costo,
+    Iva: item.iva
+  }));
+
+  // Crear una hoja de cálculo
+  const worksheet = XLSX.utils.json_to_sheet(data);
+
+  // Crear un libro de trabajo y agregar la hoja
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Inventario");
+
+  // Generar archivo Excel
+  XLSX.writeFile(workbook, "BD-inventario.xlsx");
+}
+//Funcion Sidebar
+const btnSidebar = document.getElementById('btnSidebar');
+const sidebar = document.getElementById('sidebar');
+btnSidebar.onclick = function () {
+  sidebar.classList.toggle('open');
+
+};
+
+
+document.addEventListener('click', function (e) {
+  if (!sidebar.contains(e.target) && !btnSidebar.contains(e.target)) {
+    sidebar.classList.remove('open');
+  }
+});
+
