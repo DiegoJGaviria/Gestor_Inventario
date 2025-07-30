@@ -1,0 +1,164 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ecf0f1;
+  min-height: 100vh;
+}
+
+.body-inicio {
+  background-color: #ecf0f1;
+}
+
+/* Botón hamburguesa */
+#btnSidebar {
+  position: grid;
+  top: 0.6rem;
+  left: 0.6rem;
+  background: rgba(9, 192, 247, 0.781);
+  color: #ffffff;
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 0.3rem;
+  padding: 0.3em 0.6rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.133);
+}
+
+/* Sidebar */
+aside.sidebar {
+  width: 240px;
+  background: rgba(0, 62, 116, 0.748);
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  z-index: 100;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px #0003;
+}
+
+aside.sidebar.open {
+  transform: translateX(0);
+}
+
+aside nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+aside nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem 4rem;
+  display: flex;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  justify-content: space-between;
+  
+
+}
+
+aside nav ul li a:hover,
+aside nav ul li a.active {
+  background-color: #2980b9;
+}
+
+.li {
+  display: flex;
+  text-align: -webkit-match-parent;
+  unicode-bidi: isolate;
+  width: 50px;
+  margin-left: 10px;
+}
+
+/* Header */
+header {
+  background-color: rgba(0, 62, 116, 0.997);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px #7cbdff;
+  display: flex;
+  justify-content: initial;
+  align-items: center;
+  margin-left: 0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+/* Main Layout */
+.main-layout {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2980b9;
+}
+
+.dashboard-card .big {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.dashboard-card .desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+h1 {
+  margin: 15px;
+}

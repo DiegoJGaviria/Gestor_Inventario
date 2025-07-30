@@ -723,5 +723,42 @@ aside.sidebar.open {
 .sidebar.open~.main-layout {
   margin-left: 240px;
 }
-
-/* Puedes agregar más media queries si lo necesitas */
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: rgba(0, 62, 116, 0.748);
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  z-index: 100;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px #0003;
+}
+.sidebar.open {
+  transform: translateX(0);
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar nav li {
+  margin: 1.2rem 0;
+}
+.sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.sidebar nav a:hover {
+  background: rgba(0, 62, 116, 0.997);
+}

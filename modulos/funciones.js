@@ -1,3 +1,4 @@
+
 // --- Inventario ---
 let inventario = [
   { id: 1, nombre: 'ACETAMINOFEN 325 MG + HIDROCODONA 5 MG TAB CJA X 30 B/5', ncomercial: 'FENALGEX', Laboratorio: 'TECNOQUIMICAS', Lote: 'AG001', fechaVencimiento: '2025-12-31', cum: '20103181-5', invima: '2017M-0017664', cantidad: '1500', costo: '5000', iva: '0' },
@@ -188,8 +189,19 @@ function filtrarInventario() {
 let usuarios = [
   { id: 1, nombre: "Diego Gaviria", email: "Diego@mail.com", rol: "Administrador/a" },
   { id: 2, nombre: "Karoline Gaviria", email: "Karoline@mail.com", rol: "Coordinador/a" },
-  { id: 3, nombre: "Juan Perez", email: "juan@gmail.com", rol: "Usuario/a" }
+  { id: 3, nombre: "Juan Perez", email: "juan@gmail.com", rol: "Usuario/a" },
+  { id: 4, nombre: "María Rodríguez", email: "maria.rodriguez@mail.com", rol: "Usuario/a" },
+  { id: 5, nombre: "Luis Martínez", email: "luis.martinez@mail.com", rol: "Coordinador/a" },
+  { id: 6, nombre: "Ana Torres", email: "ana.torres@mail.com", rol: "Administrador/a" },
+  { id: 7, nombre: "Carlos Ruiz", email: "carlos.ruiz@mail.com", rol: "Usuario/a" },
+  { id: 8, nombre: "Paola Herrera", email: "paola.herrera@mail.com", rol: "Usuario/a" },
+  { id: 9, nombre: "Andrés Gómez", email: "andres.gomez@mail.com", rol: "Coordinador/a" },
+  { id: 10, nombre: "Laura Mendoza", email: "laura.mendoza@mail.com", rol: "Administrador/a" },
+  { id: 11, nombre: "Felipe Navarro", email: "felipe.navarro@mail.com", rol: "Usuario/a" },
+  { id: 12, nombre: "Camila Castaño", email: "camila.castano@mail.com", rol: "Usuario/a" },
+  { id: 13, nombre: "Julián Salazar", email: "julian.salazar@mail.com", rol: "Coordinador/a" }
 ];
+
 
 // Renderiza la tabla de usuarios segun el filtro
 function renderUsuarios(filtro = "") {
@@ -344,3 +356,16 @@ document.addEventListener('click', function (e) {
   }
 });
 
+document.getElementById('buscarUsuario').oninput = function () {
+  renderUsuarios(this.value);
+};
+document.addEventListener('click', function (e) {
+  if (!sidebar.contains(e.target) && !btnSidebar.contains(e.target)) {
+    sidebar.classList.remove('open');
+  }
+});
+
+document.getElementById('formUsuario').onsubmit = function (e) {
+  e.preventDefault();
+  agregarUsuarioDesdeUI();
+};

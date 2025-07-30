@@ -1,0 +1,328 @@
+/* Reset básico */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: rgba(8, 67, 122, 0.76);
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  z-index: 100;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px #0003;
+}
+.sidebar.open {
+  transform: translateX(0);
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar nav li {
+  margin: 1.2rem 0;
+}
+.sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.sidebar nav a:hover {
+  background: rgba(27, 149, 255, 0.548);
+}
+
+/* Botón hamburguesa */
+#btnSidebar {
+  position: fixed;
+  top: 0.6rem;
+  left: 0.6rem;
+  background: rgba(9, 192, 247, 0.781);
+  color: #fff;
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.133);
+}
+
+/* Encabezado */
+header {
+  background-color: rgba(0, 62, 116, 0.997);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px #7cbdff;
+  margin-left: 0;
+}
+
+/* Layout */
+.main-layout {
+  margin-left: 0;
+  padding: 2rem;
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #bdc3c7;
+  padding-bottom: 0.5rem;
+}
+
+/* Formulario */
+form label {
+  display: inline-block;
+  margin-right: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+.nombre, .email, .roll {
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #bdc3c7;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.nombre {
+  width: 250px;
+}
+.email {
+  width: 220px;
+}
+.roll {
+  width: 160px;
+}
+
+button,
+#btnAgregarUsuario {
+  background-color: #2980b9;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover,
+#btnAgregarUsuario:hover {
+  background-color: #1c5980;
+}
+
+#boton-editar {
+  background-color: #27ae60;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 0.3rem;
+}
+.boton-editar:hover {
+  background-color: #1e8449;
+}
+
+.boton-eliminar {
+  background-color: #c0392b;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.boton-eliminar:hover {
+  background-color: #922b21;
+}
+
+/* Filtro */
+.filtro {
+  max-width: 400px;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 2px solid #bdc3c7;
+  margin-bottom: 1rem;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+th {
+  background-color: #34495e;
+  color: white;
+  text-transform: uppercase;
+}
+td {
+  border-bottom: 1px solid #e7e7e7;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+tr:hover {
+  background-color: #eef4f7;
+}
+td:last-child {
+  text-align: center;
+}
+
+/* Tablas lado a lado */
+.contenedor-tablas {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.tabla-izquierda,
+.tabla-derecha {
+  flex: 1;
+}
+.tabla-derecha table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.tabla-derecha th,
+.tabla-derecha td {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+.tabla-derecha th {
+  background-color: #2c3e50;
+  color: white;
+}
+.tabla-derecha tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 100%;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  header, .main-layout {
+    margin-left: 0;
+  }
+  .contenedor-tablas {
+    flex-direction: column;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    border: none;
+  }
+  td:before {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    color: #34495e;
+  }
+}
+.contenedor-tablas {
+  display: flex;
+  gap: 2rem; /* espacio entre tablas */
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* permite adaptarse en pantallas pequeñas */
+}
+
+.tabla-izquierda,
+.tabla-derecha {
+  flex: 1;
+  min-width: 300px; /* mínimo ancho para cada tabla */
+  
+}
+
+/* Opcional: ajustar ancho específico */
+.tabla-izquierda {
+  max-width: 65%;
+}
+
+.tabla-derecha {
+  max-width: 35%;
+}
+
+/* Estilos para los botones de acción de usuarios */
+.btn-accion {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin-right: 0.3rem;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-accion.edit {
+  background-color: #2ecc71; /* Verde */
+}
+.btn-accion.edit:hover {
+  background-color: #27ae60;
+}
+
+.btn-accion.delete {
+  background-color: #e74c3c; /* Rojo */
+}
+.btn-accion.delete:hover {
+  background-color: #c0392b;
+}
